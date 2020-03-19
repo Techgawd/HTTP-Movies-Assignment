@@ -1,4 +1,6 @@
 import React from 'react';
+import { Route, NavLink } from 'react-router-dom';
+import UpdateMovieForm from '../Movies/UpdateMovieForm';
 
 const MovieCard = props => {
   const { title, director, metascore, stars } = props.movie;
@@ -18,6 +20,10 @@ const MovieCard = props => {
           {star}
         </div>
       ))}
+            <NavLink className='update-button' exact to="/update-form">
+            Update Movie
+          </NavLink>
+          <Route path="/update-form" component={UpdateMovieForm} />
     </div>
   );
 };
